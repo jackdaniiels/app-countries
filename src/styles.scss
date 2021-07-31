@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/variables";
+
+html {
+  font-family: "Nunito Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+body {
+  background-color: $LightModeBackground;
+}
+
+.general-container {
+  max-width: 1440px;
+  width: 1440px;
+}
+
+@mixin input() {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: none !important;
+  padding: 15px 50px;
+}
+
+.form-select {
+  @include input();
+}
+
+.form-control {
+  @include input();
+  width: 400px;
+}
+
+@media (max-width: 575.98px) {
+  .form-control {
+    width: 250px;
+  }
+ }
+
+.pointer {
+  cursor: pointer;
+}
+
+#darkModeOn {
+  *{
+    color: white !important;
+    background-color: $DarkModeBackground!important;
+  }
+
+  .element {
+    background-color: $DarkModeElements!important;
+  }
+}
+
+

@@ -1,0 +1,72 @@
+<div class="animated fadeIn">
+  <app-navbar></app-navbar>
+
+  <div class="d-flex justify-content-center mt-5">
+    <div class="general-container">
+      <app-back-button [routerLink]="['/where-in-the-world']"></app-back-button>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-5">
+    <div class="general-container">
+      <div class="row">
+        <div
+          class="col-xl-6 col-lg-6 col-md-12 d-flex justify-content-center mb-5"
+        >
+          <img
+            [src]="country?.flag"
+            [alt]="country?.name"
+            class="img-fluid flag-img px-5"
+          />
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 d-flex align-items-center">
+          <div class="row px-5">
+            <div class="col-xl-12 my-1">
+              <h4>
+                <strong>{{ country?.name }}</strong>
+              </h4>
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Native Name:</b> {{ country?.nativeName }}
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Top Level Domain:</b> {{ country?.topLevelDomain }}
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Population:</b> {{ country?.population }}
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Currencies:</b>
+              <span *ngFor="let currency of country?.currencies || []">
+                {{ currency["name"] || "--" }}</span
+              >
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Region:</b> {{ country?.region }}
+            </div>
+            <div class="col-xl-6 my-1">
+              <b>Languages:</b>
+              <span *ngFor="let language of country?.languages || []">
+                {{ language["name"] || "--" }}</span
+              >
+            </div>
+            <div class="col-xl-12 my-1">
+              <b>Sub Region:</b> {{ country?.subregion }}
+            </div>
+            <div class="col-xl-12 my-1">
+              <b>Capital:</b> {{ country?.capital }}
+            </div>
+            <div class="col-xl-12 mt-5">
+              <h5 class="pb-3">Border Countries:</h5>
+              <ng-container *ngFor="let border of country?.borders">
+                <app-transparent-button
+                  [text]="border"
+                ></app-transparent-button>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

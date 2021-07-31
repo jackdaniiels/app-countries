@@ -1,0 +1,13 @@
+@import 'src/variables';
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.title-dark {
+  color: $LightModeText;
+  font-weight: 600;
+  font-size: 25px;
+}

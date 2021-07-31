@@ -1,0 +1,4 @@
+<select class="form-select" [(ngModel)]="regionSelected" name="regionSelected" (ngModelChange)="handleSelectRegion(regionSelected)">
+  <option value="" selected disabled>Filter by Region</option>
+  <option *ngFor="let region of regionOptions" [value]="region?.value">{{ region?.description }}</option>
+</select>

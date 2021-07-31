@@ -1,0 +1,28 @@
+<div class="animated fadeIn">
+  <app-navbar></app-navbar>
+
+<div class="d-flex justify-content-center">
+  <div class="general-container my-5">
+    <div class="d-flex justify-content-between">
+      <app-search (onSearchCountry)="handleSearchCountry($event)"></app-search>
+      <app-filter (onChangeRegion)="handleSelectRegion($event)"></app-filter>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="row general-container">
+    <ng-container *ngIf="countries && countries.length > 0; else noContries">
+      <div
+      class="col-xl-3 d-flex justify-content-center mb-5"
+      *ngFor="let country of countries"
+    >
+      <app-card [country]="country"></app-card>
+    </div>
+    </ng-container>
+    <ng-template #noContries>
+      <app-no-results [text]="searchFilter"></app-no-results>
+    </ng-template>
+  </div>
+</div>
+</div>

@@ -1,0 +1,8 @@
+@import 'src/variables';
+
+.btn-primary {
+  background-color: white;
+  box-shadow: 0 0.325rem 0.45rem rgba(0, 0, 0, 0.075);
+  border: none;
+  color: $LightModeText;
+}

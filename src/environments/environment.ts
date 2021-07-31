@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  urlApi: 'https://restcountries.eu/rest/v2',
   production: false
 };
 
